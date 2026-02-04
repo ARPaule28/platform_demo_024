@@ -1,0 +1,22 @@
+
+@page
+@model PlatformDemo.Web.Pages.ServicePlans.IndexModel
+@using PlatformDemo.Web.Models
+
+<h2>Service Plans</h2>
+<table class="table">
+<thead>
+<tr><th>ID</th><th>Date</th><th>Timesheets</th><th>Total Hours</th></tr>
+</thead>
+<tbody>
+@foreach (var p in Model.ServicePlans)
+{
+<tr>
+<td>@p.ServicePlanId</td>
+<td>@p.DateOfPurchase.ToShortDateString()</td>
+<td>@p.TimesheetCount</td>
+<td>@p.TotalHours</td>
+</tr>
+}
+</tbody>
+</table>
